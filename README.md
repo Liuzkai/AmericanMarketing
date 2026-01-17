@@ -58,7 +58,19 @@
 - ✅ 新闻情绪分析
 - ✅ 综合投资建议
 
-![单股分析示例](docs/screenshots/analyze.png)
+**示例输出：**
+```
+股票代码: AAPL
+当前价格: $175.50 (↑ +2.35, +1.36%)
+
+技术指标:
+  RSI: 65.3 (中性)
+  MACD: 1.25 (看涨)
+  布林带: $170.23 - $180.45
+  SMA: 50日均线 $172.50, 200日均线 $165.80 (金叉)
+
+综合建议: 买入 (评分: 75/100)
+```
 
 ### 2. 市场扫描
 
@@ -74,7 +86,18 @@
 - Dow Jones (DJIA)
 - Russell 2000
 
-![市场扫描示例](docs/screenshots/scanner.png)
+**示例输出：**
+```
+扫描条件: NASDAQ 100, PE < 25, PEG < 1
+找到 10 只机会股票:
+
+排名  股票代码  价格      PE     PEG    评分  行业
+1     CHTR    $189.76   5.23   N/A    85    Communication Services
+2     GILD    $124.91   19.35  N/A    82    Healthcare
+3     PYPL    $56.89    11.41  N/A    78    Technology
+
+行业分布: Technology (40%), Healthcare (30%), Financial (20%), Other (10%)
+```
 
 ### 3. 专业 UI 设计
 
