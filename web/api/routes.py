@@ -267,16 +267,27 @@ def market_scan():
     try:
         # 获取查询参数
         index = request.args.get('index', 'sp500')
-        max_pe = float(request.args.get('max_pe', 25))
-        max_peg = float(request.args.get('max_peg', 1))
+        max_pe = int(float(request.args.get('max_pe', 25)))  # 转换为整数
+        max_peg = int(float(request.args.get('max_peg', 1)))  # PEG 也必须是整数
         limit = int(request.args.get('limit', 50))
 
         # 使用 finviz 筛选器
         screener = FinvizScreener()
 
-        # 设置筛选条件
+        # 映射指数名称到 finviz 接受的格式
+        index_mapping = {
+            'sp500': 'S&P 500',
+            'nasdaq': 'NASDAQ 100',
+            'dow': 'DJIA',
+            'russell': 'RUSSELL 2000',
+            'any': 'Any'
+        }
+
+        finviz_index = index_mapping.get(index.lower(), 'S&P 500')
+
+        # 设置筛选条件（finviz 要求整数值）
         filters_dict = {
-            'Index': index.upper() if index != 'sp500' else 'S&P 500',
+            'Index': finviz_index,
             'P/E': f'Under {max_pe}',
             'PEG': f'Under {max_peg}'
         }
