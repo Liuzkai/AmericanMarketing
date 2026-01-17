@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="美股量化分析系统 - 专业的股票技术分析和市场扫描工具">
+    <title>{% block title %}美股量化分析系统{% endblock %}</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/themes.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <!-- ECharts CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="/" class="logo">
+                    <span class="logo-icon">📈</span>
+                    <span class="logo-text">美股量化分析</span>
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <a href="/" class="nav-link {% block nav_home %}{% endblock %}">首页</a>
+                <a href="/analyze" class="nav-link {% block nav_analyze %}{% endblock %}">单股分析</a>
+                <a href="/scanner" class="nav-link {% block nav_scanner %}{% endblock %}">市场扫描</a>
+                <a href="/about" class="nav-link {% block nav_about %}{% endblock %}">关于</a>
+            </div>
+
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">
+                    <span class="theme-icon-dark">🌙</span>
+                    <span class="theme-icon-light">☀️</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 美股量化分析系统. All rights reserved.</p>
+            <p class="footer-disclaimer">
+                免责声明：本系统提供的信息仅供参考，不构成投资建议。投资有风险，入市需谨慎。
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,376 @@
+/**
+ * 主样式文件
+ * 包含页面特定的样式和组件
+ */
+
+/* ==================== 首页样式 ==================== */
+.hero-section {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.search-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    display: flex;
+    gap: 1rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+}
+
+.search-btn {
+    padding: 1rem 2rem;
+}
+
+/* 热门股票卡片 */
+.popular-stocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.stock-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.stock-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+}
+
+.stock-ticker {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.stock-name {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* ==================== 分析页面样式 ==================== */
+.analysis-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.ticker-input-group {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+    min-width: 300px;
+}
+
+.ticker-input {
+    flex: 1;
+    text-transform: uppercase;
+}
+
+.export-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* 价格展示 */
+.price-display {
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.price-main {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.price-change {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* 网格布局 */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+/* 图表容器 */
+.chart-container {
+    width: 100%;
+    height: 400px;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.chart-small {
+    height: 250px;
+}
+
+/* 指标卡片 */
+.metric-card {
+    background-color: var(--bg-tertiary);
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.metric-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.metric-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.metric-signal {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.signal-buy {
+    background-color: rgba(0, 192, 135, 0.2);
+    color: var(--color-up);
+}
+
+.signal-sell {
+    background-color: rgba(255, 71, 87, 0.2);
+    color: var(--color-down);
+}
+
+.signal-neutral {
+    background-color: rgba(243, 156, 18, 0.2);
+    color: var(--color-warning);
+}
+
+/* 推荐卡片 */
+.recommendation-card {
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-primary);
+}
+
+.recommendation-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.recommendation-score {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.recommendation-reasons {
+    list-style: none;
+}
+
+.recommendation-reasons li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.recommendation-reasons li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-success);
+    font-weight: bold;
+}
+
+/* 新闻列表 */
+.news-list {
+    list-style: none;
+}
+
+.news-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-light);
+    transition: background-color 0.3s ease;
+}
+
+.news-item:hover {
+    background-color: var(--bg-tertiary);
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.news-meta {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* ==================== 扫描器页面样式 ==================== */
+.filter-section {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-label {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.filter-input {
+    width: 100%;
+}
+
+/* 结果统计 */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5rem;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+/* 表格增强 */
+.table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+}
+
+.sortable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.sortable:hover {
+    color: var(--color-primary);
+}
+
+/* ==================== 响应式调整 ==================== */
+@media (max-width: 1024px) {
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-container {
+        height: 300px;
+    }
+
+    .price-main {
+        font-size: 2rem;
+    }
+
+    .price-change {
+        font-size: 1.25rem;
+    }
+}

@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}首页 - 美股量化分析系统{% endblock %}
+{% block nav_home %}active{% endblock %}
+
+{% block content %}
+<div class="hero-section">
+    <h1 class="hero-title">美股量化分析系统</h1>
+    <p class="hero-subtitle">专业的股票技术分析、基本面分析和市场扫描工具</p>
+
+    <div class="search-container">
+        <input type="text"
+               id="ticker-search"
+               class="search-input"
+               placeholder="输入股票代码 (例如: AAPL, MSFT, GOOGL)"
+               maxlength="10">
+        <button class="btn btn-primary search-btn" onclick="searchStock()">
+            🔍 分析
+        </button>
+    </div>
+</div>
+
+<div class="popular-stocks">
+    <a href="/analyze/AAPL" class="stock-card">
+        <div class="stock-ticker">AAPL</div>
+        <div class="stock-name">苹果公司</div>
+    </a>
+    <a href="/analyze/MSFT" class="stock-card">
+        <div class="stock-ticker">MSFT</div>
+        <div class="stock-name">微软</div>
+    </a>
+    <a href="/analyze/GOOGL" class="stock-card">
+        <div class="stock-ticker">GOOGL</div>
+        <div class="stock-name">谷歌</div>
+    </a>
+    <a href="/analyze/NVDA" class="stock-card">
+        <div class="stock-ticker">NVDA</div>
+        <div class="stock-name">英伟达</div>
+    </a>
+    <a href="/analyze/TSLA" class="stock-card">
+        <div class="stock-ticker">TSLA</div>
+        <div class="stock-name">特斯拉</div>
+    </a>
+    <a href="/analyze/AMZN" class="stock-card">
+        <div class="stock-ticker">AMZN</div>
+        <div class="stock-name">亚马逊</div>
+    </a>
+</div>
+
+<div class="card">
+    <div class="card-header">功能介绍</div>
+    <div class="grid-3">
+        <div>
+            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">📊 单股分析</h3>
+            <p style="color: var(--text-secondary);">
+                全面分析单只股票，包括技术指标（RSI、MACD、布林带）、财务数据、新闻情绪和投资建议。
+            </p>
+            <a href="/analyze" class="btn btn-secondary mt-2">开始分析</a>
+        </div>
+        <div>
+            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">🔍 市场扫描</h3>
+            <p style="color: var(--text-secondary);">
+                根据自定义条件筛选市场机会，找到低估值高成长股票，获取机会评分排行。
+            </p>
+            <a href="/scanner" class="btn btn-secondary mt-2">市场扫描</a>
+        </div>
+        <div>
+            <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">🎨 主题切换</h3>
+            <p style="color: var(--text-secondary);">
+                支持深色和浅色两种专业金融主题，适应不同使用场景，减少长时间使用的眼疲劳。
+            </p>
+            <button class="btn btn-secondary mt-2" onclick="toggleThemeDemo()">切换主题</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function searchStock() {
+    const ticker = document.getElementById('ticker-search').value.trim().toUpperCase();
+    if (ticker) {
+        window.location.href = `/analyze/${ticker}`;
+    } else {
+        alert('请输入股票代码');
+    }
+}
+
+// 回车搜索
+document.getElementById('ticker-search').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        searchStock();
+    }
+});
+
+function toggleThemeDemo() {
+    const btn = document.getElementById('theme-toggle');
+    if (btn) btn.click();
+}
+</script>
+{% endblock %}

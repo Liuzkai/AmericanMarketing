@@ -18,3 +18,7 @@ finvizfinance>=0.14.5
 
 # 可选依赖 - SEC 财报数据下载（如需要更详细的官方财报文件）
 sec-edgar-downloader>=5.0.0
+
+# Web 框架依赖
+Flask>=2.3.0
+Flask-CORS>=4.0.0

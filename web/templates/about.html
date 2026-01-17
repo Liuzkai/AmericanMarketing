@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}关于 - 美股量化分析系统{% endblock %}
+{% block nav_about %}active{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">关于美股量化分析系统</div>
+    <div class="card-body">
+        <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem;">
+            美股量化分析系统是一个基于 Python 的专业股票分析工具，提供技术指标分析、基本面分析、新闻情绪分析和市场扫描功能。
+        </p>
+
+        <h3 style="color: var(--color-primary); margin: 1.5rem 0 1rem;">核心功能</h3>
+        <ul style="list-style: none; padding: 0;">
+            <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                <span style="position: absolute; left: 0; color: var(--color-success);">✓</span>
+                技术分析：RSI、MACD、布林带、SMA 50/200
+            </li>
+            <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                <span style="position: absolute; left: 0; color: var(--color-success);">✓</span>
+                基本面分析：PE、PB、ROE、营收增长
+            </li>
+            <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                <span style="position: absolute; left: 0; color: var(--color-success);">✓</span>
+                新闻情绪分析：基于 TextBlob 的 NLP 分析
+            </li>
+            <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                <span style="position: absolute; left: 0; color: var(--color-success);">✓</span>
+                市场扫描：自定义条件筛选投资机会
+            </li>
+            <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                <span style="position: absolute; left: 0; color: var(--color-success);">✓</span>
+                专业主题：深色/浅色金融风格界面
+            </li>
+        </ul>
+
+        <h3 style="color: var(--color-primary); margin: 1.5rem 0 1rem;">技术栈</h3>
+        <div class="grid-2">
+            <div>
+                <h4>后端</h4>
+                <ul style="color: var(--text-secondary);">
+                    <li>Flask - Web 框架</li>
+                    <li>yfinance - Yahoo Finance 数据</li>
+                    <li>finvizfinance - 筛选和新闻</li>
+                    <li>ta - 技术分析库</li>
+                    <li>TextBlob - 情绪分析</li>
+                </ul>
+            </div>
+            <div>
+                <h4>前端</h4>
+                <ul style="color: var(--text-secondary);">
+                    <li>原生 HTML/CSS/JavaScript</li>
+                    <li>ECharts - 专业图表库</li>
+                    <li>CSS Variables - 主题系统</li>
+                    <li>Responsive Design - 响应式布局</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 style="color: var(--color-primary); margin: 1.5rem 0 1rem;">数据来源</h3>
+        <ul style="color: var(--text-secondary);">
+            <li>价格数据：Yahoo Finance (yfinance)</li>
+            <li>财务数据：Finviz</li>
+            <li>新闻数据：Yahoo Finance News</li>
+        </ul>
+
+        <div class="mt-4 p-3" style="background-color: rgba(243, 156, 18, 0.1); border-left: 4px solid var(--color-warning); border-radius: 4px;">
+            <h4 style="color: var(--color-warning); margin-bottom: 0.5rem;">⚠️ 免责声明</h4>
+            <p style="color: var(--text-secondary); margin: 0;">
+                本系统提供的信息仅供参考，不构成投资建议。所有数据和分析结果基于历史信息，过往表现不代表未来结果。投资有风险，入市需谨慎。
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">联系与支持</div>
+    <div class="card-body text-center">
+        <p style="color: var(--text-secondary);">
+            GitHub: <a href="https://github.com/Liuzkai/AmericanMarketing" style="color: var(--color-primary);">Liuzkai/AmericanMarketing</a>
+        </p>
+        <p style="color: var(--text-muted); font-size: 0.875rem;">
+            © 2025 美股量化分析系统. All rights reserved.
+        </p>
+    </div>
+</div>
+{% endblock %}

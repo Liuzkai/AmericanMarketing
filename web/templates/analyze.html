@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}单股分析 - 美股量化分析系统{% endblock %}
+{% block nav_analyze %}active{% endblock %}
+
+{% block content %}
+<div class="analysis-header">
+    <div class="ticker-input-group">
+        <input type="text"
+               id="ticker-input"
+               class="ticker-input"
+               placeholder="输入股票代码 (例如: AAPL)"
+               value="{{ ticker if ticker else '' }}"
+               maxlength="10">
+        <button class="btn btn-primary" onclick="analyzeStock()">分析</button>
+    </div>
+    <div class="export-buttons" id="export-buttons" style="display: none;">
+        <button class="btn btn-secondary" onclick="exportCSV()">导出 CSV</button>
+        <button class="btn btn-secondary" onclick="exportJSON()">导出 JSON</button>
+    </div>
+</div>
+
+<div id="analysis-result"></div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/analyzer.js') }}"></script>
+<script>
+// 页面加载时自动分析（如果提供了 ticker）
+document.addEventListener('DOMContentLoaded', function() {
+    const ticker = '{{ ticker if ticker else '' }}';
+    if (ticker) {
+        analyzeStock();
+    }
+});
+
+// 回车分析
+document.getElementById('ticker-input').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        analyzeStock();
+    }
+});
+</script>
+{% endblock %}
