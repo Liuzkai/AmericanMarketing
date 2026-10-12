@@ -4,7 +4,7 @@
 
 ![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)
 ![Flask Version](https://img.shields.io/badge/flask-2.3%2B-green)
-![License](https://img.shields.io/badge/license-Proprietary-red)
+![License](https://img.shields.io/badge/license-MIT-yellow)
 ![Status](https://img.shields.io/badge/status-Beta-yellow)
 
 **专业的美股技术分析与市场扫描工具**
@@ -656,9 +656,11 @@ gunicorn -c gunicorn_config.py "web.app:create_app()"
 
 ## 📄 许可证
 
-© 2025 美股量化分析系统. All rights reserved.
+© 2025 美股量化分析系统。
 
-**Proprietary License** - 本项目为私有项目，未经授权不得用于商业用途。
+本仓库中 Liuzkai 的原创代码及其原创配套文档采用 [MIT 许可](LICENSE)，允许使用、复制、修改和商业分发；分发软件副本或实质性部分时，须保留版权声明及完整许可声明。无需在产品界面署名。第三方组件或内容仍遵循各自的原许可，相关版权及许可声明必须保留。
+
+本 MIT 授权限于本项目原创实现，不授予 Yahoo Finance／Finviz 行情、新闻等第三方数据的商业使用或再分发权；数据和服务须另遵循提供方条款。`requirements.txt` 中的依赖及 CDN 加载的 ECharts 保留原许可。尤其应区分 [yfinance 的开源代码许可与数据使用条件](https://github.com/ranaroussi/yfinance#legal-stuff)。
 
 ---
 

@@ -703,7 +703,7 @@ curl http://localhost:5001/api/v1/health
 **Created:** 2025-12-31
 **Last Updated:** 2026-01-17
 **Version:** 1.0.0 (Web interface added)
-**License:** Proprietary
+**License:** MIT for original project code and accompanying documentation; retain copyright and license notices. Third-party dependencies, market data, and news retain their original terms. See [README](README.md#-许可证) and [LICENSE](LICENSE).
 **Repository:** https://github.com/Liuzkai/AmericanMarketing
 
 **Contributors:**
